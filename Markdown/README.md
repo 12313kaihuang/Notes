@@ -8,6 +8,7 @@
 > * 发布日记，杂文，所见所想
 > * 撰写发布技术文稿（代码支持）
 > * 撰写发布学术论文（LaTeX 公式支持）
+> * [图标](#icon)
 
 ![cmd-markdown-logo](https://www.zybuluo.com/static/img/logo.png)
 
@@ -192,6 +193,6 @@ Bob-->Alice: I am good thanks!
 [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
 
 
-### 图标  
-`:maple_leaf:` :maple_leaf:
+### 图标 <b id="icon"></b>  
+`:maple_leaf:` :maple_leaf:  
 `:blue_heart:` :blue_heart:
