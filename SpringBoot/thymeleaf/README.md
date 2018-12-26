@@ -1,5 +1,4 @@
-# thymeleaf
-thymeleaf相关 学习笔记  
+# thymeleaf相关 学习笔记  
 ---
 
 
