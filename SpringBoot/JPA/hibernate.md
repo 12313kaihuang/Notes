@@ -53,6 +53,11 @@
 >     @Query(nativeQuery = true,value = "update user set username = ? where id = ?") //nativeQuery = true 表示使用指定方言(mysql,oracle等)
 >     int updateUsername(String newName,String userId);
 > 
+>     //使用Collection
+>     @Modifying  
+>     @Transactional  
+>     @Query(value = "update user p set select_num = select_num + 1 where id in (:collection)",nativeQuery = true) //另一种指明参数的方法
+>     int addNum(@Param("collection") Collection<Integer> collection); //这样就可以使用 in 了
 > }
 > ```
 **四、视图映射**
