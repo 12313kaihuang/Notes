@@ -1,4 +1,6 @@
-# Hibernate学习笔记  
+# Hibernate学习笔记:blue_heart:  
+> * [同步简书](https://www.jianshu.com/p/49413ca6ac19)  
+  
 **一、IDEA下的数据库配置**
 > 在**resources**目录下的**application.properties**中填入以下配置  
 > ```yml
