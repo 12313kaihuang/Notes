@@ -19,7 +19,10 @@
 
 ### 图片   <b id="img"></b>  
 `![Alt text](img/kate.jpg)`插入图片  
-![kate](img/kate.jpg)
+![kate](img/kate.jpg)  
+
+### 缩进  
+`&emsp;`全角缩进  
 
 ### 图标 <b id="icon"></b>  
 `:maple_leaf:` :maple_leaf:  
