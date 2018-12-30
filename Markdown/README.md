@@ -1,6 +1,6 @@
 # Markdown基本语法  
 
-  > #### 目录  
+  ### 目录    
   > [标题](#title)  
   > [强调](#strong)  
   > [图片](#img)  
@@ -26,7 +26,7 @@
 `&emsp;`全角缩进 
 
 ### 图标 <b id="icon"></b>  
- [Emoji表情](https://github.com/guodongxiaren/README/blob/master/emoji.md?tdsourcetag=s_pctim_aiomsg)
+ [Emoji表情](https://github.com/guodongxiaren/README/blob/master/emoji.md?tdsourcetag=s_pctim_aiomsg)  
 `:maple_leaf:` :maple_leaf:    
 `:blue_heart:` :blue_heart:  
 `:laughing:` :laughing:  
