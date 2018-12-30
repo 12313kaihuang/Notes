@@ -1,5 +1,5 @@
 # Markdown基本语法  
-----
+
   > ####目录  
   > [标题](#title)  
   > [强调](#strong)  
@@ -22,7 +22,7 @@
 ![kate](img/kate.jpg)  
 
 ### 缩进  
-`&ensp;`半角缩进 
+`&ensp;`半角缩进   
 `&emsp;`全角缩进 
 
 ### 图标 <b id="icon"></b>  
