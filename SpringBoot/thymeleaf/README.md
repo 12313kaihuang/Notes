@@ -1,4 +1,5 @@
 ## thymeleaf学习笔记:maple_leaf:  
+> * [同步简书](https://www.jianshu.com/p/c69b18ae566f)
 #### 一、引入  
 > * [官方文档](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)  
 > 首先在**pom.xml**文件的**dependencies**中加入依赖:  
