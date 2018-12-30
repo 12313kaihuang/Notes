@@ -15,12 +15,14 @@ import java.util.regex.Pattern;
  */
 public class UtilTools {
 
+    //获取当前时间
     public static String getCurrentTime() {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
         return sdf.format(date);
     }
 
+    //正则匹配筛选数字  eg:key=["12","34","56"]  返回的Collection适用于JPA的集合查询
     public static Collection<Integer> parseInt(String key) {
         Collection<Integer> collection = new ArrayList<>();
         String[] split = key.split(",");
