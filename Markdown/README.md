@@ -22,7 +22,8 @@
 ![kate](img/kate.jpg)  
 
 ### 缩进  
-`&emsp;`全角缩进  
+`&ensp;`半角缩进 
+`&emsp;`全角缩进 
 
 ### 图标 <b id="icon"></b>  
 `:maple_leaf:` :maple_leaf:  
