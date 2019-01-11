@@ -35,4 +35,14 @@ public class UtilTools {
         }
         return collection;
     }
+    
+    //生成一个随机的六位数验证码
+    public static String getRandomVerificationCode(){
+        char[] verificationCode = new char[6];
+        for (int i = 0; i < 6; i++) {
+            int num = new Random().nextInt(10);
+            verificationCode[i] = (char) (num+48);   //ASCII码0->48
+        }
+        return String.valueOf(verificationCode);
+    }
 }
