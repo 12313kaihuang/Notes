@@ -9,3 +9,4 @@
 * [InstanceOf在equals方法中使用存在的一个隐患](https://blog.csdn.net/qq_41069019/article/details/80223656)  
 * [使用Lambda表达式输出Map键值对](https://blog.csdn.net/qq_41069019/article/details/80222076)
 * #### [Java读写文件](https://www.jianshu.com/p/3d04346bfc80)
+* #### [Java邮件发送](https://www.jianshu.com/p/2b45a92d4c88)
