@@ -12,4 +12,21 @@
 		System.out.printf("%d ",i);
 	}
 ```
-&emsp;输出结果：`12 34 56 `。
+&emsp;输出结果：`12 34 56 `。  
+* **将手机号的中间四位变成`*`号** 
+```java
+
+public class PhoneNumber {
+
+	private static final String FORMAT_PHONE_REGEX = "(\\d{3})\\d{4}(\\d{4})";
+	public static String dimPhoneNumber(String phoneNumber){
+            return phoneNumber.replaceAll(FORMAT_PHONE_REGEX,"$1****$2");
+        }
+
+	public static void main(String[] args) {
+	    String phoneNumber = "12345678900";
+	    System.out.println(PhoneNumber.dimPhoneNumber(phoneNumber));
+	}
+}
+```  
+&emsp;输出结果：`123****8900 `。
