@@ -48,7 +48,7 @@ public class UtilTools {
     
     //将手机号中间四位变成*号
     private static final String FORMAT_PHONE_REGEX = "(\\d{3})\\d{4}(\\d{4})";
-	public static String dimPhoneNumber(String phoneNumber){
+    public static String dimPhoneNumber(String phoneNumber){
         return phoneNumber.replaceAll(FORMAT_PHONE_REGEX,"$1****$2");
     }
 }
