@@ -45,4 +45,10 @@ public class UtilTools {
         }
         return String.valueOf(verificationCode);
     }
+    
+    //将手机号中间四位变成*号
+    private static final String FORMAT_PHONE_REGEX = "(\\d{3})\\d{4}(\\d{4})";
+    public static String dimPhoneNumber(String phoneNumber){
+        return phoneNumebr.replaceAll(FORMAT_PHONE_REGEX,"$1****$2"));
+    }
 }
