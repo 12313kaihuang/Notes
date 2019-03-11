@@ -8,12 +8,16 @@ import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Random;
 
 /**
  * Created by HY
  * 2018/12/27 15:44
  */
 public class UtilTools {
+	
+	private static Random random = new Random(System.currentTimeMillis());
+
 
     //获取当前时间
     public static String getCurrentTime() {
@@ -50,5 +54,14 @@ public class UtilTools {
     private static final String FORMAT_PHONE_REGEX = "(\\d{3})\\d{4}(\\d{4})";
     public static String dimPhoneNumber(String phoneNumber){
         return phoneNumber.replaceAll(FORMAT_PHONE_REGEX,"$1****$2");
+    }
+	
+	/**
+     * 生成0-max的一个随机整数  不包括max
+     * @param max max
+     * @return int
+     */
+    public static int getRandomNum(int max) {
+        return random.nextInt(max);
     }
 }
