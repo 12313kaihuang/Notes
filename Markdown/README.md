@@ -37,6 +37,13 @@
 | 短文本 | 中等文本 | 稍微长一点的文本 |
 | 稍微长一点的文本 | 短文本 | 中等文本 |
 
+
+### 上标和下标
+* 上标：`<sup> </sup>`标签  
+如：x<sup>2</sup>  
+* 下标：`<sub> </sub>`标签  
+如：CO<sub>2</sub>  
+  
 ### 图标 <b id="icon"></b>  
  [Emoji表情](https://github.com/guodongxiaren/README/blob/master/emoji.md?tdsourcetag=s_pctim_aiomsg)  
 `:maple_leaf:` :maple_leaf:    
