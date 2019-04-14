@@ -18,8 +18,10 @@
 `
 
 ### 图片   <b id="img"></b>  
-`![Alt text](img/kate.jpg)`插入图片  
-![kate](img/kate.jpg)  
+`![Alt text](img/kate.jpg)`插入图片（原图大小）    
+![kate](img/kate.jpg)   
+`<img src="img/kate.jpg" alt="Sample"  width="480" height="300">  `插入图片（可自定义图片大小）  
+<img src="img/kate.jpg" alt="Sample"  width="480" height="300">  
 
 ### 缩进  
 `&ensp;`半角缩进   
