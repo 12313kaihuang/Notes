@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CircleProgressBar -->
+    <declare-styleable name="CircleProgressBar">
+        <!--边框颜色-->
+        <attr name="border_color" format="color" />
+        <!--边框宽度-->
+        <attr name="border_width" format="dimension"/>
+        <!--填充/背景色-->
+        <attr name="fill_color" format="color" />
+        <!--动画时长-->
+        <attr name="duration_second" format="integer" />
+    </declare-styleable>
+</resources>
