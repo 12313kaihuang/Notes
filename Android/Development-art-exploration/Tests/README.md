@@ -69,3 +69,12 @@ Serializable & Parcelable
 ## Socket Test
 > 日志TAG：`SocketTest`
 通过`Socket`和`ServerSocket`建立C/S连接，这个过程需要网络请求，所以需要注意不要在主线程中进行网络请求
+
+## BinderPool Test
+> 日志TAG：`BinderPoolTest`
+使用一个封装类BinderPool和`queryBinder(int)`方法来根据code返回不同到接口实现类，可以有效的避免
+每新建一个aidl就需要创建一个对应的Service的问题。
+
+**坑**：
+Kotlin中nit内的代码块会与有初始值比如mBinderPoolConnection的属性 按声明顺序加入到构造函数中，所以connectBinderPoolService方法声明在这里，
+调用bindService时connection会为null，但是放到后面则不会有这个问题。具体可以见BinderPool类

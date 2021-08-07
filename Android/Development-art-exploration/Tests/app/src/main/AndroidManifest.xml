@@ -61,11 +61,15 @@
         <activity android:name=".ipc.aidl.AIDLTestTestActivity" />
         <activity android:name=".ipc.provider.ProviderTestTestActivity" />
         <activity android:name=".ipc.socket.SocketTestTestActivity" />
+        <activity android:name=".ipc.binderpool.BinderPoolTestActivity" />
 
         <service
             android:name=".ipc.aidl.BookManagerService"
             android:process=":remote" />
         <service android:name=".ipc.socket.TCPServerService" />
+        <service
+            android:process=":remote"
+            android:name=".ipc.binderpool.BinderPoolService" />
 
         <provider
             android:name=".ipc.provider.BookProvider"

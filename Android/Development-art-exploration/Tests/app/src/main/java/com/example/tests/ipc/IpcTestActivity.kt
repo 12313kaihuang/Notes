@@ -2,6 +2,7 @@ package com.example.tests.ipc
 
 import com.example.tests.base.BaseTestActivity
 import com.example.tests.ipc.aidl.AIDLTestTestActivity
+import com.example.tests.ipc.binderpool.BinderPoolTestActivity
 import com.example.tests.ipc.messenger.MessengerTestTestActivity
 import com.example.tests.ipc.provider.ProviderTestTestActivity
 import com.example.tests.ipc.serialization.SerializationTestTestActivity
@@ -23,5 +24,6 @@ class IpcTestActivity : BaseTestActivity() {
             goToPage(ProviderTestTestActivity::class.java)
         }
         addBtn("Socket Test") { goToPage(SocketTestTestActivity::class.java) }
+        addBtn("BinderPool Test") { goToPage(BinderPoolTestActivity::class.java) }
     }
 }
