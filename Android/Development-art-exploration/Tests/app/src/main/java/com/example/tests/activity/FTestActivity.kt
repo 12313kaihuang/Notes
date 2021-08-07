@@ -1,9 +1,9 @@
 package com.example.tests.activity
 
 import android.content.Intent
-import com.example.tests.base.BaseActivity
+import com.example.tests.base.BaseTestActivity
 
-class FActivity : BaseActivity() {
+class FTestActivity : BaseTestActivity() {
 
     override fun onInitBtns() {
         super.onInitBtns()

@@ -6,14 +6,14 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.core.content.contentValuesOf
-import com.example.tests.base.BaseActivity
+import com.example.tests.base.BaseTestActivity
 import com.example.tests.ipc.aidl.Book
 
 /**
  * @auther hy
  * create on 2021/08/05 下午9:06
  */
-class ProviderTestActivity : BaseActivity() {
+class ProviderTestTestActivity : BaseTestActivity() {
 
     override fun onInitBtns() {
         super.onInitBtns()

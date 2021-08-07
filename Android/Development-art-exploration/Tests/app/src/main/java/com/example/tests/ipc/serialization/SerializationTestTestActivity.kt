@@ -2,10 +2,10 @@ package com.example.tests.ipc.serialization
 
 import android.util.Log
 import android.widget.Toast
-import com.example.tests.base.BaseActivity
+import com.example.tests.base.BaseTestActivity
 import java.io.*
 
-class SerializationTestActivity : BaseActivity() {
+class SerializationTestTestActivity : BaseTestActivity() {
 
     override fun onInitBtns() {
         super.onInitBtns()

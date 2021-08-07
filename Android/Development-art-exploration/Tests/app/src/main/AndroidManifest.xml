@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tests">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tests">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,32 +20,32 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.ActivityTest">
+        <activity android:name=".activity.TestActivityTest">
             <intent-filter>
                 <action android:name="com.example.activity.test" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.BActivity"
+            android:name=".activity.BTestActivity"
             android:launchMode="singleTask"
             android:taskAffinity="com.example.task1" />
         <activity
-            android:name=".activity.CActivity"
+            android:name=".activity.CTestActivity"
             android:launchMode="singleTask"
             android:taskAffinity="com.example.task1" />
 
-        <activity android:name=".activity.DActivity">
+        <activity android:name=".activity.DTestActivity">
             <intent-filter>
                 <action android:name="com.example.activity.test.D" />
                 <!--                <category android:name="android.intent.category.DEFAULT" />-->
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.FActivity" />
+        <activity android:name=".activity.FTestActivity" />
 
         <activity
-            android:name=".activity.EActivity"
+            android:name=".activity.ETestActivity"
             android:launchMode="standard">
             <intent-filter>
 
@@ -52,15 +55,17 @@
         </activity>
 
 
-        <activity android:name=".ipc.IpcActivity" />
-        <activity android:name=".ipc.serialization.SerializationTestActivity" />
-        <activity android:name=".ipc.messenger.MessengerTestActivity" />
-        <activity android:name=".ipc.aidl.AIDLTestActivity" />
-        <activity android:name=".ipc.provider.ProviderTestActivity" />
+        <activity android:name=".ipc.IpcTestActivity" />
+        <activity android:name=".ipc.serialization.SerializationTestTestActivity" />
+        <activity android:name=".ipc.messenger.MessengerTestTestActivity" />
+        <activity android:name=".ipc.aidl.AIDLTestTestActivity" />
+        <activity android:name=".ipc.provider.ProviderTestTestActivity" />
+        <activity android:name=".ipc.socket.SocketTestTestActivity" />
 
         <service
             android:name=".ipc.aidl.BookManagerService"
             android:process=":remote" />
+        <service android:name=".ipc.socket.TCPServerService" />
 
         <provider
             android:name=".ipc.provider.BookProvider"

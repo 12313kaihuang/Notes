@@ -8,9 +8,8 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.net.Uri
 import android.util.Log
-import com.example.tests.ipc.provider.ProviderTestActivity.Companion.TAG
+import com.example.tests.ipc.provider.ProviderTestTestActivity.Companion.TAG
 import java.lang.RuntimeException
-import java.sql.SQLDataException
 
 /**
  * @auther hy

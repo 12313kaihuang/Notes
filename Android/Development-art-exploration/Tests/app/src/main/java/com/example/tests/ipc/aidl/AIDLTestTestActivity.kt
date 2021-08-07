@@ -9,14 +9,14 @@ import android.os.IBinder
 import android.os.Process
 import android.os.RemoteException
 import android.util.Log
-import com.example.tests.base.BaseActivity
+import com.example.tests.base.BaseTestActivity
 import com.example.tests.ipc.aidl.AIDLConstants.TAG
 
 /**
  * @auther hy
  * create on 2021/08/02 下午7:54
  */
-class AIDLTestActivity : BaseActivity() {
+class AIDLTestTestActivity : BaseTestActivity() {
 
     private var mBookService: IBookManager? = null
 

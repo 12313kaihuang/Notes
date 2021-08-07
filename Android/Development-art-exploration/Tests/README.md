@@ -66,3 +66,6 @@ Serializable & Parcelable
 > 日志TAG：`AIDL Test`
 ### ContentProvier Test
 > 日志TAG：`ContentProviderTest`
+## Socket Test
+> 日志TAG：`SocketTest`
+通过`Socket`和`ServerSocket`建立C/S连接，这个过程需要网络请求，所以需要注意不要在主线程中进行网络请求

@@ -1,10 +1,9 @@
 package com.example.tests.ipc.messenger
 
 import android.os.Bundle
-import android.widget.Button
-import com.example.tests.base.BaseActivity
+import com.example.tests.base.BaseTestActivity
 
-class MessengerTestActivity : BaseActivity() {
+class MessengerTestTestActivity : BaseTestActivity() {
 
     private lateinit var client: MessengerClient
 
