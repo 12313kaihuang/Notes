@@ -62,6 +62,7 @@
         <activity android:name=".ipc.provider.ProviderTestTestActivity" />
         <activity android:name=".ipc.socket.SocketTestTestActivity" />
         <activity android:name=".ipc.binderpool.BinderPoolTestActivity" />
+        <activity android:name=".bitmap.BitmapTestActivity" />
 
         <service
             android:name=".ipc.aidl.BookManagerService"

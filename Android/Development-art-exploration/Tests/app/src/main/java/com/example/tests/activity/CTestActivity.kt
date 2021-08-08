@@ -1,13 +1,13 @@
 package com.example.tests.activity
 
-import com.yu.hu.libcommon.base.BaseTestActivity
+import com.yu.hu.libcommon.base.AbstractTestActivity
 
-class CTestActivity : BaseTestActivity() {
+class CTestActivity : AbstractTestActivity() {
 
     override fun onInitBtns() {
         super.onInitBtns()
         addBtn("to Main") {
-            goToPage(TestActivityTest::class.java)
+            startActivity(TestActivityTest::class.java)
         }
     }
 }

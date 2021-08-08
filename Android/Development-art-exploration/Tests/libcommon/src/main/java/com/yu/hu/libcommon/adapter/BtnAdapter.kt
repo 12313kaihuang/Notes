@@ -1,4 +1,4 @@
-package com.yu.hu.libcommon.base
+package com.yu.hu.libcommon.adapter
 
 import android.util.Log
 import android.view.ViewGroup

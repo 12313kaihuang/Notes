@@ -1,9 +1,9 @@
 package com.example.tests.ipc.messenger
 
 import android.os.Bundle
-import com.yu.hu.libcommon.base.BaseTestActivity
+import com.yu.hu.libcommon.base.AbstractTestActivity
 
-class MessengerTestTestActivity : BaseTestActivity() {
+class MessengerTestTestActivity : AbstractTestActivity() {
 
     private lateinit var client: MessengerClient
 

@@ -3,10 +3,10 @@ package com.example.tests.ipc.binderpool
 import android.os.RemoteException
 import android.util.Log
 import android.widget.Toast
-import com.yu.hu.libcommon.base.BaseTestActivity
+import com.yu.hu.libcommon.base.AbstractTestActivity
 import java.lang.Exception
 
-class BinderPoolTestActivity : BaseTestActivity() {
+class BinderPoolTestActivity : AbstractTestActivity() {
 
     override fun onInitBtns() {
         super.onInitBtns()

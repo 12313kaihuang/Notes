@@ -1,9 +1,9 @@
 package com.example.tests.activity
 
 import android.content.Intent
-import com.yu.hu.libcommon.base.BaseTestActivity
+import com.yu.hu.libcommon.base.AbstractTestActivity
 
-class TestActivityTest : BaseTestActivity() {
+class TestActivityTest : AbstractTestActivity() {
     companion object {
         const val TAG = "ActivityTest"
     }
@@ -23,7 +23,7 @@ class TestActivityTest : BaseTestActivity() {
      * 命令查看Activity任务栈，可以发现此时本
      */
     private fun test1() {
-        goToPage(BTestActivity::class.java)
+        startActivity(BTestActivity::class.java)
     }
 
     /**
@@ -38,11 +38,11 @@ class TestActivityTest : BaseTestActivity() {
 
     //见EActivity
     private fun test3() {
-        goToPage(ETestActivity::class.java)
+        startActivity(ETestActivity::class.java)
     }
 
     //见FActivity
     private fun test4() {
-        goToPage(FTestActivity::class.java)
+        startActivity(FTestActivity::class.java)
     }
 }

@@ -1,17 +1,16 @@
 package com.yu.hu.libcommon.base
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.CallSuper
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.yu.hu.libcommon.databinding.ActivityBaseBinding
+import com.yu.hu.libcommon.adapter.BtnAdapter
+import com.yu.hu.libcommon.databinding.LayoutBaseBinding
 
 /**
  * @auther hy
  * create on 2021/07/30 下午3:30
  */
-abstract class BaseTestActivity : BaseActivity<ActivityBaseBinding>() {
+abstract class AbstractTestActivity : BaseActivity<LayoutBaseBinding>() {
     protected lateinit var mAdapter: BtnAdapter
     private val btns: MutableList<BtnAdapter.BtnItem> = mutableListOf()
 
@@ -26,9 +25,7 @@ abstract class BaseTestActivity : BaseActivity<ActivityBaseBinding>() {
         onInitBtns()
     }
 
-    override fun crateBinding(): ActivityBaseBinding =
-        ActivityBaseBinding.inflate(layoutInflater)
-
+    override fun crateBinding(): LayoutBaseBinding = LayoutBaseBinding.inflate(layoutInflater)
 
     override fun onStart() {
         super.onStart()
@@ -43,9 +40,4 @@ abstract class BaseTestActivity : BaseActivity<ActivityBaseBinding>() {
         btns.add(BtnAdapter.BtnItem(btnText, clickListener))
     }
 
-    protected fun <T : Activity> goToPage(clz: Class<T>) {
-        startActivity(Intent(this, clz))
-    }
-
-    protected open fun getName(): String = this::class.java.simpleName
 }

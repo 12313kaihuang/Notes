@@ -3,10 +3,10 @@ package com.example.tests.activity
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
-import com.yu.hu.libcommon.base.BaseTestActivity
+import com.yu.hu.libcommon.base.AbstractTestActivity
 import com.example.tests.activity.TestActivityTest.Companion.TAG
 
-class ETestActivity : BaseTestActivity() {
+class ETestActivity : AbstractTestActivity() {
 
     override fun onInitBtns() {
         super.onInitBtns()
