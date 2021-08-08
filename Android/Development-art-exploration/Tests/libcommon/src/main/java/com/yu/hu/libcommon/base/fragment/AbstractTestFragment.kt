@@ -15,13 +15,15 @@ import java.lang.Exception
 abstract class AbstractTestFragment : BaseFragment<LayoutBaseBinding>() {
 
     protected lateinit var mAdapter: BtnAdapter
-    private val btns: MutableList<BtnAdapter.BtnItem> = mutableListOf()
+    private val itemList: MutableList<BtnAdapter.IBaseItem> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mAdapter = BtnAdapter()
+        mAdapter = createAdapter()
         onInitBtns()
     }
+
+    protected open fun createAdapter(): BtnAdapter = BtnAdapter()
 
     override fun createViewBinding(
         inflater: LayoutInflater,
@@ -35,15 +37,19 @@ abstract class AbstractTestFragment : BaseFragment<LayoutBaseBinding>() {
         mViewBinding.recyclerView.adapter = mAdapter
         mViewBinding.recyclerView.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        mAdapter.submitList(btns)
+        mAdapter.submitList(itemList)
     }
 
     protected open fun onInitBtns() {
 
     }
 
+    protected fun addItem(item: BtnAdapter.IBaseItem) {
+        itemList.add(item)
+    }
+
     protected fun addBtn(btnText: String, clickListener: (() -> Unit)?) {
-        btns.add(BtnAdapter.BtnItem(btnText, clickListener))
+        itemList.add(BtnAdapter.BtnItem(btnText, clickListener))
     }
 
     protected open fun getName(): String = this::class.java.simpleName

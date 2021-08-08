@@ -12,7 +12,7 @@ import com.yu.hu.libcommon.databinding.LayoutBaseBinding
  */
 abstract class AbstractTestActivity : BaseActivity<LayoutBaseBinding>() {
     protected lateinit var mAdapter: BtnAdapter
-    private val btns: MutableList<BtnAdapter.BtnItem> = mutableListOf()
+    private val btns: MutableList<BtnAdapter.IBaseItem> = mutableListOf()
 
     @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {

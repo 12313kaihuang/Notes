@@ -1,6 +1,7 @@
 package com.yu.hu.libcommon.adapter
 
 import android.util.Log
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
@@ -13,9 +14,8 @@ import java.lang.Exception
  * @auther hy
  * create on 2021/07/30 下午3:32
  */
-class BtnAdapter : ListAdapter<BtnAdapter.BtnItem, BtnAdapter.BtnHolder>(DiffCallback()) {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BtnHolder {
+open class BtnAdapter : ListAdapter<BtnAdapter.IBaseItem, BtnAdapter.BaseHolder>(DiffCallback()) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseHolder {
         val btn = Button(parent.context).apply {
             isAllCaps = false
             layoutParams = RecyclerView.LayoutParams(
@@ -26,37 +26,44 @@ class BtnAdapter : ListAdapter<BtnAdapter.BtnItem, BtnAdapter.BtnHolder>(DiffCal
         return BtnHolder(btn)
     }
 
-
-    override fun onBindViewHolder(holder: BtnHolder, position: Int) =
+    override fun onBindViewHolder(holder: BaseHolder, position: Int) {
         holder.bindItem(getItem(position))
+    }
 
-    class BtnHolder(private val btn: Button) : RecyclerView.ViewHolder(btn) {
-        fun bindItem(item: BtnItem) {
+    override fun getItemViewType(position: Int): Int {
+        return -1
+    }
+
+    abstract class BaseHolder(root: View) : RecyclerView.ViewHolder(root) {
+        abstract fun bindItem(baseItem: IBaseItem)
+    }
+
+    class BtnHolder(private val btn: Button) : BaseHolder(btn) {
+        override fun bindItem(baseItem: IBaseItem) {
+            val item = baseItem as BtnItem
             btn.text = item.text
             btn.isAllCaps = false
             btn.setOnClickListener {
                 try {
                     item.clickListener?.invoke()
                 } catch (e: Exception) {
-                    Toast.makeText(
-                        it.context,
-                        "error:${Log.getStackTraceString(e)}",
-                        Toast.LENGTH_LONG
-                    ).show()
+                    Toast.makeText(it.context, "click error", Toast.LENGTH_SHORT).show()
                     Log.e("BtnAdapter", "btn(${item.text}) onLick error ", e)
                 }
             }
         }
     }
 
-    data class BtnItem(val text: String, val clickListener: (() -> Unit)?)
+    interface IBaseItem
 
-    class DiffCallback : DiffUtil.ItemCallback<BtnItem>() {
-        override fun areItemsTheSame(oldItem: BtnItem, newItem: BtnItem): Boolean =
+    data class BtnItem(val text: String, val clickListener: (() -> Unit)?) : IBaseItem
+
+    class DiffCallback : DiffUtil.ItemCallback<IBaseItem>() {
+        override fun areItemsTheSame(oldItem: IBaseItem, newItem: IBaseItem): Boolean =
             oldItem === newItem
 
-        override fun areContentsTheSame(oldItem: BtnItem, newItem: BtnItem): Boolean =
-            oldItem == newItem
+        override fun areContentsTheSame(oldItem: IBaseItem, newItem: IBaseItem): Boolean =
+            oldItem.equals(newItem)
 
     }
 }
