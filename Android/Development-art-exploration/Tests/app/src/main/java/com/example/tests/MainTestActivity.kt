@@ -1,8 +1,8 @@
 package com.example.tests
 
 import com.example.tests.activity.TestActivityTest
-import com.example.tests.base.BaseTestActivity
 import com.example.tests.ipc.IpcTestActivity
+import com.yu.hu.libcommon.base.BaseTestActivity
 
 class MainTestActivity : BaseTestActivity() {
 

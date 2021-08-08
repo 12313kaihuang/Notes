@@ -8,8 +8,8 @@ import android.os.Message
 import android.os.SystemClock
 import android.text.TextUtils
 import android.util.Log
-import com.example.tests.base.BaseActivity
 import com.example.tests.databinding.AcitivitySocketTestBinding
+import com.yu.hu.libcommon.base.BaseActivity
 import java.io.*
 import java.lang.Exception
 import java.net.Socket

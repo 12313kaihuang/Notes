@@ -1,7 +1,7 @@
 package com.example.tests.activity
 
 import android.content.Intent
-import com.example.tests.base.BaseTestActivity
+import com.yu.hu.libcommon.base.BaseTestActivity
 
 class FTestActivity : BaseTestActivity() {
 

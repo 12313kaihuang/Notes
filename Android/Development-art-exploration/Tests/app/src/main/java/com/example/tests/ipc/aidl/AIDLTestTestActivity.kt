@@ -9,7 +9,7 @@ import android.os.IBinder
 import android.os.Process
 import android.os.RemoteException
 import android.util.Log
-import com.example.tests.base.BaseTestActivity
+import com.yu.hu.libcommon.base.BaseTestActivity
 import com.example.tests.ipc.aidl.AIDLConstants.TAG
 
 /**

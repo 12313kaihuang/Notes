@@ -3,7 +3,7 @@ package com.example.tests.ipc.binderpool
 import android.os.RemoteException
 import android.util.Log
 import android.widget.Toast
-import com.example.tests.base.BaseTestActivity
+import com.yu.hu.libcommon.base.BaseTestActivity
 import java.lang.Exception
 
 class BinderPoolTestActivity : BaseTestActivity() {

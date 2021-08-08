@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.core.content.contentValuesOf
-import com.example.tests.base.BaseTestActivity
+import com.yu.hu.libcommon.base.BaseTestActivity
 import com.example.tests.ipc.aidl.Book
 
 /**

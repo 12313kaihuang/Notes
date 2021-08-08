@@ -1,12 +1,11 @@
-package com.example.tests.base
+package com.yu.hu.libcommon.base
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.annotation.CallSuper
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.tests.databinding.ActivityBaseBinding
+import com.yu.hu.libcommon.databinding.ActivityBaseBinding
 
 /**
  * @auther hy
@@ -48,5 +47,5 @@ abstract class BaseTestActivity : BaseActivity<ActivityBaseBinding>() {
         startActivity(Intent(this, clz))
     }
 
-    fun getName(): String = this::class.java.simpleName
+    protected open fun getName(): String = this::class.java.simpleName
 }

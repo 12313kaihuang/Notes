@@ -1,4 +1,4 @@
-package com.example.tests.base
+package com.yu.hu.libcommon.base
 
 import android.util.Log
 import android.view.ViewGroup

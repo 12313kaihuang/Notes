@@ -3,7 +3,7 @@ package com.example.tests.activity
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
-import com.example.tests.base.BaseTestActivity
+import com.yu.hu.libcommon.base.BaseTestActivity
 import com.example.tests.activity.TestActivityTest.Companion.TAG
 
 class ETestActivity : BaseTestActivity() {

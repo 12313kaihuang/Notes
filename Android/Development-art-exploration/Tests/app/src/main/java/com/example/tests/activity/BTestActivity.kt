@@ -1,6 +1,6 @@
 package com.example.tests.activity
 
-import com.example.tests.base.BaseTestActivity
+import com.yu.hu.libcommon.base.BaseTestActivity
 
 class BTestActivity : BaseTestActivity() {
 

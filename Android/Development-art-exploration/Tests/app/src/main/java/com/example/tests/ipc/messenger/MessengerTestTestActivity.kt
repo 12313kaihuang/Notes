@@ -1,7 +1,7 @@
 package com.example.tests.ipc.messenger
 
 import android.os.Bundle
-import com.example.tests.base.BaseTestActivity
+import com.yu.hu.libcommon.base.BaseTestActivity
 
 class MessengerTestTestActivity : BaseTestActivity() {
 

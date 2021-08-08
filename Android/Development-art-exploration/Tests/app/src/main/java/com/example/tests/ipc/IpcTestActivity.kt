@@ -1,6 +1,6 @@
 package com.example.tests.ipc
 
-import com.example.tests.base.BaseTestActivity
+import com.yu.hu.libcommon.base.BaseTestActivity
 import com.example.tests.ipc.aidl.AIDLTestTestActivity
 import com.example.tests.ipc.binderpool.BinderPoolTestActivity
 import com.example.tests.ipc.messenger.MessengerTestTestActivity

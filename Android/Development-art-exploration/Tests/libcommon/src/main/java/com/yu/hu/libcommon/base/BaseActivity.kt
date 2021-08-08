@@ -1,4 +1,4 @@
-package com.example.tests.base
+package com.yu.hu.libcommon.base
 
 import android.os.Bundle
 import androidx.annotation.CallSuper

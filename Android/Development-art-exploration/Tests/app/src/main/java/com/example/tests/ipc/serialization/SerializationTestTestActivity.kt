@@ -2,7 +2,7 @@ package com.example.tests.ipc.serialization
 
 import android.util.Log
 import android.widget.Toast
-import com.example.tests.base.BaseTestActivity
+import com.yu.hu.libcommon.base.BaseTestActivity
 import java.io.*
 
 class SerializationTestTestActivity : BaseTestActivity() {
