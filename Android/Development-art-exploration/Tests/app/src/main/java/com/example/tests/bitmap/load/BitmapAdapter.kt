@@ -1,4 +1,4 @@
-package com.example.tests.bitmap
+package com.example.tests.bitmap.load
 
 import android.graphics.Bitmap
 import android.view.Gravity

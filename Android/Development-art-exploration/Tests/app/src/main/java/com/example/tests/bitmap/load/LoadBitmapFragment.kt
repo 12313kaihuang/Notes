@@ -1,4 +1,4 @@
-package com.example.tests.bitmap
+package com.example.tests.bitmap.load
 
 import com.example.tests.R
 import com.yu.hu.libcommon.adapter.BtnAdapter

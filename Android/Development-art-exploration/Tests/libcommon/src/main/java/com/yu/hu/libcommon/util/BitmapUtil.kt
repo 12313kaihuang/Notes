@@ -63,7 +63,7 @@ object BitmapUtil {
         return newBitmap
     }
 
-    private fun calculateInSampleSize(
+    fun calculateInSampleSize(
         options: BitmapFactory.Options,
         targetWidth: Int,
         targetHeight: Int

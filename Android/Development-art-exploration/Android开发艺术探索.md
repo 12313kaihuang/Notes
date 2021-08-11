@@ -189,6 +189,26 @@ interface IBinderPool {
 
 
 
+# 第11章 Android的线程和线程池
+
+线程在Android中是一个很重要的概念，从用途上来说，线程分为**主线程**和子线程，**主线程主要处理和界面相关的事情**，而**子线程**则往往**用于执行耗时操作**。由于Android的特性，如果在主线程中执行耗时操作那么就会导致程序无法及时地响应，因此耗时操作必须放在子线程中去执行。除了Thread本身以外，在Android中可以扮演线程角色的还有很多，比如**AsyncTask**和**IntentService**，同时**HandlerThread**也是一种特殊的线程。尽管AsyncTask、IntentService以及HandlerThread的表现形式都有别于传统的线程，但是它们的本质仍然是传统的线程。对于AsyncTask来说，它的底层用到了线程池，对于IntentService和HandlerThread来说，它们的底层则直接使用了线程。
+
+不同形式的线程虽然都是线程，但是它们仍然具有不同的特性和使用场景。AsyncTask封装了线程池和Handler，它主要是为了方便开发者在子线程中更新UI。HandlerThread是一种具有消息循环的线程，在它的内部可以使用Handler。IntentService是一个服务，系统对其进行了封装使其可以更方便地执行后台任务，IntentService内部采用HandlerThread来执行任务，当任务执行完毕后IntentService会自动退出。从任务执行的角度来看，IntentService的作用很像一个后台线程，但是IntentService是一种服务，它不容易被系统杀死从而可以尽量保证任务的执行，而如果是一个后台线程，由于这个时候进程中没有活动的四大组件，那么这个进程的优先级就会非常低，会很容易被系统杀死，这就是IntentService的优点。
+
+在操作系统中，**线程是操作系统调度的最小单元**，同时线程又是一种受限的系统资源，即线程不可能无限制地产生，并且线程的创建和销毁都会有相应的开销。当系统中存在大量的线程时，系统会通过时间片轮转的方式调度每个线程，因此**线程不可能做到绝对的并行**，除非线程数量小于等于CPU的核心数，一般来说这是不可能的。试想一下，如果在一个进程中频繁地创建和销毁线程，这显然不是高效的做法。正确的做法是采用线程池，一个线程池中会缓存一定数量的线程，通过线程池就可以避免因为频繁创建和销毁线程所带来的系统开销。Android中的线程池来源于Java，主要是通过Executor来派生特定类型的线程池，不同种类的线程池又具有各自的特性，详细内容会在11.3节中进行介绍。
+
+## 主线程和子线程
+
+主线程是指进程所拥有的线程，在Java中默认情况下一个进程只有一个线程，这个线程就是主线程。Android沿用了Java的线程模型，其中的线程也分为主线程和子线程，其中主线程也叫UI线程。主线程的作用是**运行四大组件**以及**处理它们和用户的交互**，而自线程的作用是**执行耗时任务**，比如网络请求，I/O操作等。
+
+从Android 3.0开始系统要求网络访问必须在自线程中进行，否则网络访问会失败并抛出NetworkOnMainThreadException异常，这样是为了避免主线程由于被耗时操作所阻塞从而出现ANR现象。
+
+### Android中的线程形态
+
+#### AsyncTask
+
+
+
 # 第12章 Bitmap的加载和Cache
 
 ## Bitmap的高效加载
@@ -217,6 +237,65 @@ Bitmap在Android中指的是一张图片，通过**BitmapFactory**来加载Bitma
 4. 将BitmapFactory.Options的`inJustDecodeBounds`参数设为false，然后重新加载图片
 
 具体代码逻辑可以在Demo项目中查看。
+
+
+
+## Android中的缓存策略
+
+缓存策略主要包含缓存的**添加**、**读取**和**删除**三类操作。策略主要体现在删除上面，当缓存容量满了之后，需要通过策略删除调用之前的缓存。
+
+常见的缓存策略主要有LRU（Least Recently Used）最近最少使用算法和LFU（Least Ferquently Used）最不常使用。
+
+### LruCache
+
+LruCache是一个范型类，它内部采用一个LinkedHashMap以**强引用**的方式缓存对象，当缓存满时，LruCache会**移除较早使用的缓存**对象，然后再添加新的缓存对象。
+
+一些特殊情况下，还需要重写LruCache的entryRemoved方法，LruCache移除旧缓存时会调用**entryRemoved**方法，因此可以在该方法内完成一些资源回收工作（如果需要的话）。
+
+```java
+public final V get(K key) //获取
+public final V put(K key, V value) //添加
+public final V remove(K key) //删除
+```
+
+
+
+### DiskLruCache
+
+DiskLruCache用于实现存储设备缓存，即**磁盘缓存**。它通过将缓存对象写入文件系统从而实现缓存的效果。
+
+* DiskLruCache的创建
+
+  DiskLruCache并不能通过构造方法来创建，它提供了open方法用于创建自身。
+
+* DiskLruCache的缓存添加
+
+  DiskLruCache的缓存添加的操作是通过**Editor**完成的，Editor表示一个缓存对象的编辑对象。
+
+  > 一般采用url的md5值作为key
+
+* DiskLruCache的缓存查找
+
+  和添加过程类似，缓存查找过程也需要将url转换为key，然后通过get方法得到一个**Snapshot**对象，接着再通过其得到缓存的文件输入流，进而得到Bitmap对象。
+
+  > 为了避免OOM，一般不直接加载原始图片，而是通过**采样率**inSampleSize来得到缩放后的图片Bitmap对象
+
+
+
+### ImageLoader的实现
+
+一个优秀的ImageLoader应该具有如下功能：
+
+* 图片的同步加载
+* 图片的异步加载
+* 图片压缩
+* 内存缓存
+* 磁盘缓存
+* 网络拉取
+
+其中**内存缓存**和**磁盘缓存**时ImageLoader的核心。除此之外，还需要处理一些特殊的情况，例如在ListView或GridView中，View的复用既是它们的优点也是它们的缺点，假设Item A正在加载图片，这时快速滑动屏幕，Item A被移出屏幕然后新的Item复用了A，这时就会出现图片错位的问题。
+
+> 优化卡顿：当上下频繁快速滑动时，会瞬间产生大量一步操作，但是这些操作是无意义的，可以通过setOnScrollListener设置滑动监听，在滑动的时候不加载图片，停止滑动时再执行加载逻辑。
 
 # 第15章 Android性能优化
 
